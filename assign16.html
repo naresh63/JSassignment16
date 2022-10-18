@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assign 16 regex</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // 1.ans
+      let str = "Lunch at 10:10 in the room 123:456.";
+      let result = str.match(/\b\d\d:\d\d\b/);
+      console.log("result =>", result);
+
+      // 2.
+      function checkWord() {
+        let str1 = "check happiness";
+        if (str1.includes("happiness")) {
+          return "Hurray!";
+        } else {
+          return "There is no happiness.";
+        }
+      }
+      console.log(checkWord());
+
+      // 3.
+      function checkPrime(n) {
+        //  let inp = Number(n);
+        let result = /^1?$|^(11+?)\1+$/.test(n);
+        return result;
+      }
+      console.log(checkPrime(4));
+
+      // 4.
+      function checkDigit(n) {
+        let str4 = n.toString();
+        console.log(str4.length);
+      }
+      checkDigit(100);
+
+      // 5.
+
+      // Function to remove the leading zeros
+      function removeLeadingZeros(num) {
+        // traverse the entire string
+        for (var i = 0; i < num.length; i++) {
+          // check for the first non-zero character
+          if (num.charAt(i) != "0") {
+            // return the remaining string
+            let res = num.substr(i);
+            return res;
+          }
+        }
+        return "0";
+      }
+
+      // Driver Code
+      let num = "1023";
+      console.log(removeLeadingZeros(num));
+
+      num = "00123";
+      console.log(removeLeadingZeros(num));
+
+      // 6.
+      function checkConsecutive(str) {
+        const str1 = str;
+        const pattern = /([a-z])\1+/g;
+        const matches = str.match(pattern);
+        if (matches.length > 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(checkConsecutive("loop"));
+
+      // 7.
+      function validatePIN(pin) {
+        return /^(\d{4}|\d{6})$/.test(pin);
+      }
+      console.log(validatePIN("12345"));
+
+      // 8.
+      function checkHex(n) {
+        return /^#[0-9A-F]{6}$/i.test(n);
+      }
+      console.log(checkHex("#CD5C&C"));
+
+      // 9.
+      function CheckNum() {
+        let arr = [1, 2, 7, 9];
+        if (arr.includes(7)) {
+          return "Boom!";
+        } else {
+          return "there is no 7 in the array";
+        }
+      }
+      console.log(CheckNum());
+    </script>
+  </body>
+</html>
